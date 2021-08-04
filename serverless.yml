@@ -1,0 +1,16 @@
+service: apollo-lambda
+provider:
+  name: aws
+  runtime: nodejs14.x
+functions:
+  graphql:
+    handler: handler.graphqlHandler
+    events:
+    - http:
+        path: /
+        method: post
+        cors: true
+    - http:
+        path: /
+        method: get
+        cors: true
